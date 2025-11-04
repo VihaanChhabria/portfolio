@@ -1,35 +1,83 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import profilePicture from "./assets/VihaanProfilePic.jpg";
+import gridImage from "./assets/gridImage.svg";
+import {
+  FileUser,
+  Github,
+  GithubIcon,
+  Linkedin,
+  LucideGithub,
+  Mail,
+} from "lucide-react";
+import linkedin from "./assets/linkedin.svg";
+import youtube from "./assets/youtube.svg";
+import github from "./assets/github.svg";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  console.log(gridImage);
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div
+      style={{
+        backgroundImage:
+          "linear-gradient(135deg, #a78bfa82 0%, #e2e8f043 100%)",
+      }}
+    >
+      <div className="grid-pattern" style={{paddingBottom: "75px", borderBottom: "4px solid #e5e7eb"}}>
+        <div style={{ margin: "0 100px" }}>
+          <h2 style={{ paddingTop: "10px", marginTop: "0px"}}>
+            Vihaan Chhabria
+          </h2>
+          <div
+            style={{
+              height: "480px",
+              marginTop: "70px",
+              display: "flex",
+              alignItems: "center",
+              flexDirection: "row",
+            }}
+          >
+            <img
+              src={profilePicture}
+              style={{
+                height: "100%",
+                borderRadius: "15px",
+              }}
+            />
+            <div style={{ marginLeft: "30px", height: "100%" }}>
+              <h2 style={{ fontSize: "20px" }}>
+                Hi, I'm Vihaan Chhabria, and I love
+              </h2>
+              <h1 style={{ display: "inline", fontSize: "60px" }}>
+                Exploring The <span className="gradient-text">Science</span>{" "}
+                That Keeps Us Alive 🧬
+              </h1>
+              <h2 style={{ fontSize: "25px", marginTop: "45px" }}>
+                High School Student | Aspiring Physician
+              </h2>
+
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  width: "275px",
+                  gap: "20px",
+                  marginTop: "45px"
+                }}
+              >
+                <img src={linkedin} height={"35px"} />
+                <img src={github} height={"35px"} />
+                <img src={youtube} height={"35px"} />
+                <Mail size={35} />
+                <FileUser size={35} />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;

@@ -4,12 +4,14 @@ import Section from "./components/Section";
 import { CircleStar, GraduationCap, Heart, Users } from "lucide-react";
 import Card from "./components/Card";
 import AboutMe from "./components/AboutMe";
+import SectionPicker from "./components/SectionPicker";
 
 function App() {
   return (
     <>
       <MainSection />
       <AboutMe />
+      <SectionPicker />
       <Section
         icon={<GraduationCap size={58} color="#a78bfa" />}
         title={"Education"}

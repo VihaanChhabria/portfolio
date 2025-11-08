@@ -27,8 +27,12 @@ a:hover {
 h1 {
   font-size: 72px;
   line-height: 1.1;
- 
 }
+h1, h2, h3, h4, h5, h6 {
+  z-index: 999;
+  position: relative;
+}
+
 .gradient-text {
   /* background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%); */
   background: linear-gradient(30deg,#a78bfa 35%,#e2e8f0);

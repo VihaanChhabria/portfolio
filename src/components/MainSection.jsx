@@ -15,7 +15,10 @@ const MainSection = () => {
     >
       <div
         className="grid-pattern"
-        style={{ paddingBottom: "75px", borderBottom: "4px solid #e5e7eb" }}
+        style={{
+          paddingBottom: "75px",
+          borderBottom: "4px solid #e5e7eb",
+        }}
       >
         <div style={{ margin: "0 100px" }}>
           <h2 style={{ paddingTop: "20px", marginTop: "0px" }}>
@@ -35,6 +38,8 @@ const MainSection = () => {
               style={{
                 height: "100%",
                 borderRadius: "15px",
+                zIndex: "999",
+                position: "relative",
               }}
             />
             <div style={{ marginLeft: "30px", height: "100%" }}>
@@ -43,7 +48,7 @@ const MainSection = () => {
               </h2>
               <h1 style={{ display: "inline", fontSize: "60px" }}>
                 Exploring The <span className="gradient-text">Science</span>{" "}
-                That Keeps Us Alive 🧬
+                That Keeps Us Alive 🔬
               </h1>
               <h2 style={{ fontSize: "25px", marginTop: "45px" }}>
                 High School Student (Grade 10) |{" "}
@@ -59,13 +64,54 @@ const MainSection = () => {
                   width: "275px",
                   gap: "20px",
                   marginTop: "45px",
+                  zIndex: "999",
+                  position: "relative",
                 }}
               >
-                <img src={linkedin} height={"35px"} />
-                <img src={github} height={"35px"} />
-                <img src={youtube} height={"35px"} />
-                <Mail size={35} />
-                <FileUser size={35} />
+                <img
+                  src={linkedin}
+                  height={"35px"}
+                  onClick={() =>
+                    window.open("https://www.linkedin.com/", "_blank")
+                  }
+                  style={{ cursor: "pointer" }}
+                />
+                <img
+                  src={github}
+                  height={"35px"}
+                  onClick={() =>
+                    window.open("https://github.com/VihaanChhabria/", "_blank")
+                  }
+                  style={{ cursor: "pointer" }}
+                />
+                <img
+                  src={youtube}
+                  height={"35px"}
+                  onClick={() =>
+                    window.open(
+                      "https://www.youtube.com/@vihaanthebot/",
+                      "_blank"
+                    )
+                  }
+                  style={{ cursor: "pointer" }}
+                />
+                <Mail
+                  size={35}
+                  onClick={() =>
+                    window.open("mailto:chhabria.vihaan2@gmail.com", "_blank")
+                  }
+                  style={{ cursor: "pointer" }}
+                />
+                <FileUser
+                  size={35}
+                  onClick={() =>
+                    window.open(
+                      `${window.location.origin}/VihaanChhabriaResume.pdf`,
+                      "_blank"
+                    )
+                  }
+                  style={{ cursor: "pointer" }}
+                />
               </div>
             </div>
           </div>

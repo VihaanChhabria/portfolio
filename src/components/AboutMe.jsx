@@ -3,7 +3,15 @@ import AboutMePicture from "../assets/AboutMePicture.jpg";
 
 const AboutMe = () => {
   return (
-    <div style={{ borderBottom: "4px solid #e5e7eb", padding: "20px 100px" }}>
+    <div
+      style={{
+        borderBottom: "4px solid #e5e7eb",
+        padding: "20px 100px",
+        zIndex: "999",
+        position: "relative",
+        backgroundColor: "#242424",
+      }}
+    >
       <h1
         style={{ fontSize: "40px", marginTop: "10px" }}
         className="gradient-text"

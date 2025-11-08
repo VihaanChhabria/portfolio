@@ -1,6 +1,6 @@
 import React from "react";
 
-const Section = ({ icon, title, cards}) => {
+const Section = ({ icon, title, cards }) => {
   return (
     <div style={{ width: "100%" }}>
       <div
@@ -13,6 +13,9 @@ const Section = ({ icon, title, cards}) => {
           paddingTop: "30px",
           borderBottom: "4px solid #e5e7eb",
           paddingBottom: "60px",
+          backgroundColor: "#242424",
+          zIndex: "999",
+          position: "relative",
         }}
       >
         {icon}

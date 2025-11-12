@@ -1,3 +1,4 @@
+import ExperiencesPage from "./pages/ExperiencesPage";
 import HomePage from "./pages/HomePage";
 import {
   createBrowserRouter,
@@ -10,7 +11,7 @@ function App() {
   const routes = (
     <Route>
       <Route index element={<HomePage />} />
-      {/* <Route path="game-start" element={<GameStartPage />} /> */}
+      <Route path="experiences" element={<ExperiencesPage />} />
     </Route>
   );
   const router = createBrowserRouter(createRoutesFromElements(routes));

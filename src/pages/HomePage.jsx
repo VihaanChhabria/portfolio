@@ -12,8 +12,8 @@ const HomePage = () => {
     <>
       <MouseFollower />
       <MainSection />
-      <AboutMe />
-      <SectionPicker />
+      {/* <AboutMe /> */}
+      {/* <SectionPicker /> */}
       <Section
         icon={<GraduationCap size={58} color="#a78bfa" />}
         title={"Education"}

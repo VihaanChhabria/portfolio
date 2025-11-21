@@ -12,7 +12,7 @@ const ProjectCard = ({ project }) => {
       }}
     >
       {/* Left Text */}
-      <div style={{ width: "45%" }}>
+      <div >
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <h3 style={{ margin: 0, fontSize: "25px" }}>{project.title}</h3>
           <div
@@ -103,34 +103,6 @@ const ProjectCard = ({ project }) => {
             </div>
           ))}
         </div>
-      </div>
-
-      {/* Diamond */}
-      <div
-        style={{
-          position: "absolute",
-          left: "50%",
-          transform: "translate(-50%, -50%) rotate(45deg)",
-          width: "20px",
-          height: "20px",
-          background: "white",
-        }}
-      />
-
-      {/* Images */}
-      <div style={{ width: "45%", textAlign: "left", paddingLeft: "20px" }}>
-        {project.images.map((img, i) => (
-          <img
-            key={i}
-            src={img}
-            alt={project.title}
-            style={{
-              width: "100%",
-              marginBottom: "10px",
-              borderRadius: "8px",
-            }}
-          />
-        ))}
       </div>
     </div>
   );

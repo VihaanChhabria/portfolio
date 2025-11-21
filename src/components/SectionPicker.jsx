@@ -37,9 +37,9 @@ return (
                             justifyContent: "center"
                         }}
                     >
-                        <SectionPickerCard title={"Experiences"} description={"..."} image={AboutMePicture} destination={""}/>
+                        <SectionPickerCard title={"Experiences"} description={"..."} image={AboutMePicture} destination={"experiences"}/>
                         <SectionPickerCard title={"Youtube"} description={"..."} image={AboutMePicture} destination={""}/>
-                        <SectionPickerCard title={"Projects"} description={"..."} image={AboutMePicture} destination={""}/>
+                        <SectionPickerCard title={"Projects"} description={"..."} image={AboutMePicture} destination={"projects"}/>
                         <SectionPickerCard title={"??"} description={"..."} image={AboutMePicture} destination={""}/>
                     </div>
                 </div>

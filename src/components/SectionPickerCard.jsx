@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const SectionPickerCard = ({ title, description, image, destination }) => {
+  const navigate = useNavigate();
   return (
     <div
       style={{
@@ -41,6 +43,7 @@ const SectionPickerCard = ({ title, description, image, destination }) => {
             transition:
               "background-color 150ms, border-color 150ms, color 150ms, box-shadow 150ms",
           }}
+          onClick={() => navigate(destination)}
           onMouseEnter={(e) => {
             e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.04)";
             e.currentTarget.style.borderColor = "#a78bfa";

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ProjectCard from "../components/ProjectCard";
 import PowerBIGameDashboard from "../assets/PowerBIGameDashboard.png";
 import PowerBITeamAbilities from "../assets/PowerBITeamAbilities.png";
@@ -33,7 +33,7 @@ const projects = [
     ],
   },
   {
-    title: "VScouter - FRC Scouting App",
+    title: "",
     subtitle:
       "Used by 20+ FRC teams worldwide to analyze performance and optimize strategy",
     details: [
@@ -118,6 +118,21 @@ const projects = [
 ];
 
 const ProjectsPage = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const project = projects[0];
+
+  useEffect(() => {
+    console.log("setting up interval");
+    const interval = setInterval(() => {
+      console.log("changing image");
+      setCurrentImageIndex(
+        (prevIndex) => (prevIndex + 1) % project.images.length
+      );
+    }, 6500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div
       style={{
@@ -158,7 +173,7 @@ const ProjectsPage = () => {
         <div
           style={{
             width: "50%",
-            height: "600px",
+            height: "300px",
             position: "sticky",
             top: "50vh",
             transform: "translateY(-50%)",
@@ -167,13 +182,13 @@ const ProjectsPage = () => {
           }}
         >
           <img
-            src={PowerBIGameDashboard}
+            src={project.images[currentImageIndex]}
             alt="Project Visual"
             style={{
               maxWidth: "95%",
               maxHeight: "100%",
               objectFit: "contain",
-              borderRadius: "15px"
+              borderRadius: "15px",
             }}
           />
         </div>

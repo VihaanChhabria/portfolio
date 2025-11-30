@@ -6,15 +6,19 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import ProjectsPage from "./pages/ProjectsPage";
+import ProjectsPageMobile from "./pages/ProjectsPageMobile";
+import ProjectsPageDesktop from "./pages/ProjectsPageDesktop";
 import YouTubePage from "./pages/YouTubePage";
+import useResponsive from "./hooks/useResponsive";
 
 function App() {
+  const { isMobile } = useResponsive();
+  
   const routes = (
     <Route>
       <Route index element={<HomePage />} />
       <Route path="experiences" element={<ExperiencesPage />} />
-      <Route path="projects" element={<ProjectsPage />} />
+      <Route path="projects" element={isMobile ? <ProjectsPageMobile /> : <ProjectsPageDesktop />} />
       <Route path="youtube" element={<YouTubePage />} />
     </Route>
   );

@@ -1,8 +1,8 @@
 import React from "react";
-import AboutMePicture from "../assets/AboutMePicture.jpg";
-import useResponsive from "../hooks/useResponsive";
+import AboutMePicture from "../../assets/AboutMePicture.jpg";
+import useResponsive from "../../hooks/useResponsive";
 
-const AboutMe = () => {
+const HomeAboutMe = () => {
   const { isMobile, isTablet } = useResponsive();
 
   const padding = isMobile ? "20px" : isTablet ? "20px 40px" : "20px 100px";
@@ -65,4 +65,4 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe;
+export default HomeAboutMe;

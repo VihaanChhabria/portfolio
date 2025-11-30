@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import useResponsive from "../hooks/useResponsive";
+import useResponsive from "../../hooks/useResponsive";
 
-const SectionPickerCard = ({ title, description, image, destination }) => {
+const HomeSectionPickerCard = ({ title, description, image, destination }) => {
   const navigate = useNavigate();
   const { isMobile } = useResponsive();
 
@@ -25,7 +25,7 @@ const SectionPickerCard = ({ title, description, image, destination }) => {
         gap: "20px",
         backgroundColor: "rgba(36, 36, 36, 0.6)",
         backdropFilter: "blur(2px)",
-        WebkitBackdropFilter: "blur(10px)", 
+        WebkitBackdropFilter: "blur(10px)",
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.transition = "border-color 200ms";
@@ -81,4 +81,4 @@ const SectionPickerCard = ({ title, description, image, destination }) => {
   );
 };
 
-export default SectionPickerCard;
+export default HomeSectionPickerCard;

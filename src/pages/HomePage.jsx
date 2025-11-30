@@ -1,16 +1,16 @@
 import React from "react";
-import MainSection from "../components/MainSection";
-import AboutMe from "../components/AboutMe";
-import SectionPicker from "../components/SectionPicker";
-import MouseFollower from "../components/MouseFollower";
+import HomeMainSection from "../components/HomeComponents/HomeMainSection";
+import HomeAboutMe from "../components/HomeComponents/HomeAboutMe";
+import HomeSectionPicker from "../components/HomeComponents/HomeSectionPicker";
+import HomeMouseFollower from "../components/HomeComponents/HomeMouseFollower";
 
 const HomePage = () => {
   return (
     <>
-      <MouseFollower />
-      <MainSection />
-      <AboutMe />
-      <SectionPicker />
+      <HomeMouseFollower />
+      <HomeMainSection />
+      <HomeAboutMe />
+      <HomeSectionPicker />
     </>
   );
 };

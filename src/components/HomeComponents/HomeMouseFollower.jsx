@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-const MouseFollower = () => {
+const HomeMouseFollower = () => {
   useEffect(() => {
     const mouseFollower = document.querySelector(".mouse-follower");
     let targetX = -100;
@@ -54,4 +54,4 @@ const MouseFollower = () => {
   );
 };
 
-export default MouseFollower;
+export default HomeMouseFollower;

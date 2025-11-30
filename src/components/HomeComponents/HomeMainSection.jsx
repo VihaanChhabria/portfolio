@@ -1,12 +1,12 @@
 import React from "react";
-import profilePicture from "../assets/VihaanProfilePic.jpg";
+import profilePicture from "../../assets/VihaanProfilePic.jpg";
 import { FileUser, Mail } from "lucide-react";
-import linkedin from "../assets/linkedin.svg";
-import youtube from "../assets/youtube.svg";
-import github from "../assets/github.svg";
-import useResponsive from "../hooks/useResponsive";
+import linkedin from "../../assets/linkedin.svg";
+import youtube from "../../assets/youtube.svg";
+import github from "../../assets/github.svg";
+import useResponsive from "../../hooks/useResponsive";
 
-const MainSection = () => {
+const HomeMainSection = () => {
   const { isMobile, isTablet } = useResponsive();
 
   const containerMargin = isMobile ? "0 20px" : isTablet ? "0 40px" : "0 100px";
@@ -165,4 +165,4 @@ const MainSection = () => {
   );
 };
 
-export default MainSection;
+export default HomeMainSection;

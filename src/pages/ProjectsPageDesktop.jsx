@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import ProjectCard from "../components/ProjectCard";
+import ProjectCard from "../components/ProjectsComponents/ProjectCard";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -48,7 +48,9 @@ const ProjectsPage = () => {
     if (activeProject.images.length <= 1) return; // No need to rotate
 
     const rotate = () => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % activeProject.images.length);
+      setCurrentImageIndex(
+        (prevIndex) => (prevIndex + 1) % activeProject.images.length
+      );
     };
 
     const timeout = setTimeout(rotate, 6500);
@@ -60,7 +62,6 @@ const ProjectsPage = () => {
     setCurrentImageIndex(0);
   }, [activeProjectIndex]);
 
-
   const handlePrev = () => {
     if (activeProject.images.length <= 1) return;
     setCurrentImageIndex((prevIndex) =>
@@ -70,8 +71,8 @@ const ProjectsPage = () => {
 
   const handleNext = () => {
     if (activeProject.images.length <= 1) return;
-    setCurrentImageIndex((prevIndex) =>
-      (prevIndex + 1) % activeProject.images.length
+    setCurrentImageIndex(
+      (prevIndex) => (prevIndex + 1) % activeProject.images.length
     );
   };
 
@@ -109,13 +110,16 @@ const ProjectsPage = () => {
         Learn About My Projects
       </h1>
 
-      <div style={{
-        display: "flex", flexDirection: "row",
-        paddingBottom: "60px",
-        paddingLeft: "120px",
-        paddingRight: "120px",
-        borderBottom: "4px solid #e5e7eb"
-      }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          paddingBottom: "60px",
+          paddingLeft: "120px",
+          paddingRight: "120px",
+          borderBottom: "4px solid #e5e7eb",
+        }}
+      >
         <div
           style={{
             display: "flex",
@@ -210,7 +214,10 @@ const ProjectsPage = () => {
                     width: "10px",
                     height: "10px",
                     borderRadius: "50%",
-                    background: i === currentImageIndex ? "#fff" : "rgba(255,255,255,0.5)",
+                    background:
+                      i === currentImageIndex
+                        ? "#fff"
+                        : "rgba(255,255,255,0.5)",
                     transition: "background 0.3s",
                   }}
                 />
@@ -255,6 +262,5 @@ const ProjectsPage = () => {
     </div>
   );
 };
-
 
 export default ProjectsPage;

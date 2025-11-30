@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import ProjectCard from "../components/ProjectCard";
+import ProjectCard from "../components/ProjectsComponents/ProjectCard";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 

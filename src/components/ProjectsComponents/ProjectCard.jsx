@@ -1,5 +1,5 @@
 import React from "react";
-import useResponsive from "../hooks/useResponsive";
+import useResponsive from "../../hooks/useResponsive";
 
 const ProjectCard = ({ project }) => {
   const { isMobile, isTablet } = useResponsive();

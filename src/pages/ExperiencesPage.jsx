@@ -1,14 +1,30 @@
-import { CircleStar, GraduationCap, Heart, Users } from "lucide-react";
+import { ArrowLeft, CircleStar, GraduationCap, Heart, Users } from "lucide-react";
 import React, { useEffect } from "react";
 import Section from "../components/Section";
 import Card from "../components/Card";
+import { useNavigate } from "react-router-dom";
 
 const ExperiencesPage = () => {
+  const navigate = useNavigate();
   useEffect(() => {
-    scrollTo(0, 0); 
+    scrollTo(0, 0);
   }, []);
   return (
     <div>
+      <button
+        style={{
+          position: "absolute",
+          top: "10px",
+          left: "10px",
+          background: "transparent",
+          border: "none",
+          cursor: "pointer",
+          zIndex: "1000",
+        }}
+        onClick={() => navigate("/")}
+      >
+        <ArrowLeft size={35} />
+      </button>
       <Section
         icon={<GraduationCap size={58} color="#a78bfa" />}
         title={"Education"}

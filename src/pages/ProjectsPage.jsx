@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import ProjectCard from "../components/ProjectCard";
 import PowerBIGameDashboard from "../assets/PowerBIGameDashboard.png";
-import { ChevronLeft, ChevronRight, Code2 } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, Code2 } from "lucide-react";
 
 import ArrowSwap1 from "../assets/ProjectImages/ArrowSwap1.png";
 import ArrowSwap2 from "../assets/ProjectImages/ArrowSwap2.png";
@@ -22,6 +22,7 @@ import VScouter3 from "../assets/ProjectImages/VScouter3.png";
 import VScouter4 from "../assets/ProjectImages/VScouter4.png";
 import YDEP1 from "../assets/ProjectImages/YDEP1.png";
 import YDEP2 from "../assets/ProjectImages/YDEP2.png";
+import { useNavigate } from "react-router-dom";
 
 const projects = [
   {
@@ -197,6 +198,8 @@ const projects = [
 
 
 const ProjectsPage = () => {
+  const navigate = useNavigate();
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const sectionsRef = useRef([]);
@@ -204,6 +207,8 @@ const ProjectsPage = () => {
   const activeProject = projects[activeProjectIndex];
 
   useEffect(() => {
+    scrollTo(0, 0);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -269,10 +274,21 @@ const ProjectsPage = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        marginLeft: "120px",
-        marginRight: "120px",
       }}
     >
+      <button
+        style={{
+          position: "absolute",
+          top: "10px",
+          left: "10px",
+          background: "transparent",
+          border: "none",
+          cursor: "pointer",
+        }}
+        onClick={() => navigate("/")}
+      >
+        <ArrowLeft size={35} />
+      </button>
       <h1
         style={{
           fontSize: "40px",
@@ -285,7 +301,13 @@ const ProjectsPage = () => {
         Learn About My Projects
       </h1>
 
-      <div style={{ display: "flex", flexDirection: "row" }}>
+      <div style={{
+        display: "flex", flexDirection: "row",
+        paddingBottom: "60px",
+        paddingLeft: "120px",
+        paddingRight: "120px",
+        borderBottom: "4px solid #e5e7eb"
+      }}>
         <div
           style={{
             display: "flex",
@@ -406,6 +428,21 @@ const ProjectsPage = () => {
             </button>
           )}
         </div>
+      </div>
+      <div style={{ textAlign: "center", marginTop: "20px" }}>
+        <button
+          onClick={() => navigate("/")}
+          style={{
+            background: "rgba(75, 75, 75, 0.7)",
+            border: "none",
+            borderRadius: "6px",
+            padding: "10px 20px",
+            cursor: "pointer",
+            marginBottom: "20px",
+          }}
+        >
+          <span style={{ fontSize: "20px" }}>Back to Home Page</span>
+        </button>
       </div>
     </div>
   );

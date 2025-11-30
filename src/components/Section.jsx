@@ -1,6 +1,13 @@
 import React from "react";
+import useResponsive from "../hooks/useResponsive";
 
 const Section = ({ icon, title, cards }) => {
+  const { isMobile, isTablet } = useResponsive();
+
+  const titleFontSize = isMobile ? "28px" : isTablet ? "34px" : "40px";
+  const paddingTop = isMobile ? "20px" : "30px";
+  const paddingBottom = isMobile ? "40px" : "60px";
+
   return (
     <div style={{ width: "100%" }}>
       <div
@@ -10,18 +17,23 @@ const Section = ({ icon, title, cards }) => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          paddingTop: "30px",
+          paddingTop: paddingTop,
           borderBottom: "4px solid #e5e7eb",
-          paddingBottom: "60px",
+          paddingBottom: paddingBottom,
           backgroundColor: "#242424",
           zIndex: "999",
           position: "relative",
         }}
       >
-        {icon}
+        <div style={{ transform: `scale(${isMobile ? 0.7 : 1})` }}>{icon}</div>
 
         <h1
-          style={{ fontSize: "40px", marginTop: "10px", paddingBottom: "30px" }}
+          style={{
+            fontSize: titleFontSize,
+            marginTop: "10px",
+            paddingBottom: "30px",
+            textAlign: "center",
+          }}
           className="gradient-text"
         >
           {title}

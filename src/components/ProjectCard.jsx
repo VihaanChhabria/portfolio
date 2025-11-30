@@ -1,6 +1,15 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
+import useResponsive from "../hooks/useResponsive";
 
 const ProjectCard = ({ project }) => {
+  const { isMobile, isTablet } = useResponsive();
+
+  const titleFontSize = isMobile ? "20px" : isTablet ? "22px" : "25px";
+  const subtitleFontSize = isMobile ? "16px" : "18px";
+  const detailFontSize = isMobile ? "15px" : "16.5px";
+  const buttonWidth = isMobile ? "100%" : "120px";
+  const buttonFontSize = isMobile ? "14px" : "15px";
+
   return (
     <div
       style={{
@@ -12,16 +21,27 @@ const ProjectCard = ({ project }) => {
       }}
     >
       {/* Left Text */}
-      <div>
+      <div style={{ width: "100%" }}>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <h3 style={{ margin: 0, fontSize: "25px" }}>{project.title}</h3>
+          <h3 style={{ margin: 0, fontSize: titleFontSize }}>
+            {project.title}
+          </h3>
         </div>
-        <h3 style={{ margin: "5px 0", fontSize: "18px", color: "#a78bfa" }}>
+        <h3
+          style={{
+            margin: "5px 0",
+            fontSize: subtitleFontSize,
+            color: "#a78bfa",
+          }}
+        >
           {project.subtitle}
         </h3>
         <ul>
           {project.details.map((detail, idx) => (
-            <li key={idx} style={{ fontSize: "16.5px", marginTop: "10px" }}>
+            <li
+              key={idx}
+              style={{ fontSize: detailFontSize, marginTop: "10px" }}
+            >
               {detail}
             </li>
           ))}
@@ -37,7 +57,7 @@ const ProjectCard = ({ project }) => {
             fontWeight: "medium",
             cursor: "pointer",
             transition: "background-color 200ms",
-            width: "120px",
+            width: buttonWidth,
           }}
           onMouseEnter={(e) =>
             (e.currentTarget.style.backgroundColor = "#8e72e4ff")
@@ -47,7 +67,9 @@ const ProjectCard = ({ project }) => {
           }
           onClick={() => window.open(project.learnMoreLink, "_blank")}
         >
-          <p style={{ fontSize: "15px", margin: 0, padding: 0 }}>Learn More</p>
+          <p style={{ fontSize: buttonFontSize, margin: 0, padding: 0 }}>
+            Learn More
+          </p>
         </button>
         <div
           style={{

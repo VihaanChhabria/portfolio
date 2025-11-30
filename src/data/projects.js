@@ -38,7 +38,7 @@ const projects = [
       "React",
       "JavaScript",
     ],
-    learnMoreLink: "https://github.com/VihaanChhabria/",
+    learnMoreLink: "https://vscouter.netlify.app/home/",
     images: [
       VScouter1,
       VScouter2,
@@ -57,7 +57,7 @@ const projects = [
       "Open-source to provide equitable access to high-quality scouting data",
     ],
     skills: ["Database Management", "React", "JavaScript", "Data Aggregation", "Collaboration Tools"],
-    learnMoreLink: "https://github.com/VihaanChhabria/",
+    learnMoreLink: "https://github.com/VihaanChhabria/VRoboHub/",
     images: [
       VRoboHub1,
       VRoboHub2
@@ -73,13 +73,13 @@ const projects = [
       "Open-source to help other students freely improve debate experiences",
     ],
     skills: ["JavaScript", "App Development", "UI/UX Design", "Problem-Solving", "Automation"],
-    learnMoreLink: "https://github.com/VihaanChhabria/",
+    learnMoreLink: "https://github.com/VihaanChhabria/GavelPal/",
     images: [
       GavelPal1
     ],
   },
   {
-    title: "FTC-Autonomous-Planner",
+    title: "FTC Autonomous Planner",
     subtitle: "Simplifies creation of autonomous routines for FTC robots",
     details: [
       "Visual interface to plan, simulate, and export autonomous routines efficiently",
@@ -88,7 +88,7 @@ const projects = [
       "Open-source to support students learning robotics strategy",
     ],
     skills: ["React", "JavaScript", "Simulation", "Algorithm Design", "Planning Tools"],
-    learnMoreLink: "https://github.com/VihaanChhabria/",
+    learnMoreLink: "https://github.com/VihaanChhabria/FTC-Autonomous-Planner/",
     images: [
       FTCAutonomousPlanner1,
       FTCAutonomousPlanner2
@@ -104,14 +104,14 @@ const projects = [
       "Open-source to allow free access for content creators",
     ],
     skills: ["Python", "Video Processing", "Automation", "Creative Programming", "UI Development"],
-    learnMoreLink: "https://github.com/VihaanChhabria/",
+    learnMoreLink: "https://github.com/VihaanChhabria/YDEP",
     images: [
       YDEP1,
       YDEP2
     ],
   },
   {
-    title: "FRC 2024 NoteDetector",
+    title: "FRC 2024 Note Detector",
     subtitle: "Prototype to detect 2024 FRC game notes for robot navigation",
     details: [
       "Image recognition software to detect objects for autonomous robot actions",
@@ -120,7 +120,7 @@ const projects = [
       "Open-source, sharing code to help other teams implement similar systems",
     ],
     skills: ["Computer Vision", "Python", "OpenCV", "Algorithm Design", "Robotics"],
-    learnMoreLink: "https://github.com/VihaanChhabria/",
+    learnMoreLink: "https://github.com/VihaanChhabria/FRC2024-NoteDetector",
     images: [
       FRC2024NoteDetector1
     ],
@@ -135,7 +135,7 @@ const projects = [
       "Open-source, improving tools for the FRC community and beyond",
     ],
     skills: ["React JS", "QR Code Generation", "Data Transfer Optimization", "Problem-Solving"],
-    learnMoreLink: "https://github.com/VihaanChhabria/",
+    learnMoreLink: "https://fountainqrcodedemo.netlify.app/",
     images: [
       FountainQRCodeDemo1,
       FountainQRCodeDemo2
@@ -151,7 +151,7 @@ const projects = [
       "Open-source to contribute to community robotics innovation",
     ],
     skills: ["Computer Vision", "Python", "Spatial Analysis", "Robotics Automation"],
-    learnMoreLink: "https://github.com/VihaanChhabria/",
+    learnMoreLink: "https://github.com/VihaanChhabria/FRC-Reefscape-Reef-Tracker",
     images: [
       FRCReefscapeReefTracker1
     ],
@@ -166,7 +166,7 @@ const projects = [
       "Open-source, enabling other teams to benefit from technical solutions",
     ],
     skills: ["Python", "Vision Systems", "Calibration", "Collaboration", "Problem-Solving"],
-    learnMoreLink: "https://github.com/VihaanChhabria/",
+    learnMoreLink: "https://github.com/VihaanChhabria/FRCLimelightOffsetCalibration",
     images: [
       FRCLimelightOffsetCalibration1,
       FRCLimelightOffsetCalibration2
@@ -182,7 +182,7 @@ const projects = [
       "Open-source, making tools accessible for educational purposes",
     ],
     skills: ["Python", "App Development", "CNC Control", "User Interface Design", "Problem-Solving"],
-    learnMoreLink: "https://github.com/VihaanChhabria/",
+    learnMoreLink: "https://github.com/VihaanChhabria/ArrowSwap/",
     images: [
       ArrowSwap1,
       ArrowSwap2

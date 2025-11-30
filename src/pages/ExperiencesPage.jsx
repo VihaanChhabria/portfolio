@@ -6,8 +6,8 @@ import {
   Users,
 } from "lucide-react";
 import React, { useEffect } from "react";
-import Section from "../components/Section";
-import Card from "../components/Card";
+import ExperiencesSection from "../components/ExperiencesComponents/ExperiencesSection";
+import ExperiencesCard from "../components/ExperiencesComponents/ExperiencesCard";
 import { useNavigate } from "react-router-dom";
 
 const ExperiencesPage = () => {
@@ -16,7 +16,7 @@ const ExperiencesPage = () => {
   useEffect(() => {
     scrollTo(0, 0);
   }, []);
-  
+
   return (
     <div>
       <button
@@ -33,12 +33,12 @@ const ExperiencesPage = () => {
       >
         <ArrowLeft size={35} />
       </button>
-      <Section
+      <ExperiencesSection
         icon={<GraduationCap size={58} color="#a78bfa" />}
         title={"Education"}
         cards={
           <>
-            <Card
+            <ExperiencesCard
               title={"Grade 10"}
               subtitle={
                 <>
@@ -57,12 +57,12 @@ const ExperiencesPage = () => {
           </>
         }
       />
-      <Section
+      <ExperiencesSection
         icon={<Heart size={58} color="#a78bfa" />}
         title={"Healthcare & Community Service"}
         cards={
           <>
-            <Card
+            <ExperiencesCard
               title={"Hospital Volunteer & Shadow"}
               subtitle={
                 <>
@@ -81,7 +81,7 @@ const ExperiencesPage = () => {
               skills={["Healthcare", "Emergency Medicine", "Volunteering"]}
               time={"2025–present"}
             />
-            <Card
+            <ExperiencesCard
               title={"Family Practice Shadow"}
               subtitle={"General Physician Dr. Christopher Drumm"}
               details={[
@@ -91,7 +91,7 @@ const ExperiencesPage = () => {
               skills={["Clinical Experience", "Primary Care", "Patient Care"]}
               time={"2024–present"}
             />
-            <Card
+            <ExperiencesCard
               title={"Community Volunteer"}
               subtitle={"Collegeville Food Pantry"}
               details={[
@@ -104,12 +104,12 @@ const ExperiencesPage = () => {
           </>
         }
       />
-      <Section
+      <ExperiencesSection
         icon={<Users size={58} color="#a78bfa" />}
         title={"Leadership & Mentorship"}
         cards={
           <>
-            <Card
+            <ExperiencesCard
               title={"Class President & Former Vice-President"}
               subtitle={"Perkiomen Valley High School"}
               details={[
@@ -120,7 +120,7 @@ const ExperiencesPage = () => {
               skills={["Student Government", "Advocacy", "Leadership"]}
               time={"2024–present"}
             />
-            <Card
+            <ExperiencesCard
               title={"Student Leader"}
               subtitle={"PVHS Gifted Task Force & Student Leadership Committee"}
               details={[
@@ -130,7 +130,7 @@ const ExperiencesPage = () => {
               skills={["Mentorship", "Guidance", "Collaboration"]}
               time={"2024–present"}
             />
-            <Card
+            <ExperiencesCard
               title={"Debate Member & Middle School Coach"}
               subtitle={"***"}
               details={[
@@ -143,12 +143,12 @@ const ExperiencesPage = () => {
           </>
         }
       />
-      <Section
+      <ExperiencesSection
         icon={<CircleStar size={58} color="#a78bfa" />}
         title={"Athletics"}
         cards={
           <>
-            <Card
+            <ExperiencesCard
               title={"Defensive Center Back"}
               subtitle={"Perkiomen Valley Travel Soccer Team"}
               details={[

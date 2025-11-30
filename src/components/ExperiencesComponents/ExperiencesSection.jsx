@@ -1,7 +1,7 @@
 import React from "react";
-import useResponsive from "../hooks/useResponsive";
+import useResponsive from "../../hooks/useResponsive";
 
-const Section = ({ icon, title, cards }) => {
+const ExperiencesSection = ({ icon, title, cards }) => {
   const { isMobile, isTablet } = useResponsive();
 
   const titleFontSize = isMobile ? "28px" : isTablet ? "34px" : "40px";
@@ -45,4 +45,4 @@ const Section = ({ icon, title, cards }) => {
   );
 };
 
-export default Section;
+export default ExperiencesSection;

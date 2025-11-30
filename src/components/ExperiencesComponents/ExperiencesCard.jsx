@@ -1,7 +1,7 @@
 import React from "react";
-import useResponsive from "../hooks/useResponsive";
+import useResponsive from "../../hooks/useResponsive";
 
-const Card = ({ title, subtitle, details, skills, time }) => {
+const ExperiencesCard = ({ title, subtitle, details, skills, time }) => {
   const { isMobile, isTablet } = useResponsive();
 
   const cardWidth = isMobile
@@ -118,4 +118,4 @@ const Card = ({ title, subtitle, details, skills, time }) => {
   );
 };
 
-export default Card;
+export default ExperiencesCard;

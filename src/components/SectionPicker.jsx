@@ -1,8 +1,18 @@
 import React from "react";
 import SectionPickerCard from "./SectionPickerCard";
 import AboutMePicture from "../assets/AboutMePicture.jpg";
+import useResponsive from "../hooks/useResponsive";
 
 const SectionPicker = () => {
+    const { isMobile, isTablet } = useResponsive();
+
+    const margin = isMobile ? "0 20px" : isTablet ? "0 40px" : "0 70px";
+    const titleFontSize = isMobile ? "28px" : isTablet ? "34px" : "40px";
+    const gridColumns = isMobile ? "1fr" : "repeat(2, 1fr)";
+    const paddingBottom = isMobile ? "40px" : "75px";
+    const gap = isMobile ? "15px" : "20px";
+    const rowGap = isMobile ? "20px" : "30px";
+
     return (
         <div>
             <div
@@ -13,12 +23,12 @@ const SectionPicker = () => {
             >
                 <div
                     className="grid-pattern"
-                    style={{ paddingBottom: "75px", borderBottom: "4px solid #e5e7eb" }}
+                    style={{ paddingBottom: paddingBottom, borderBottom: "4px solid #e5e7eb" }}
                 >
-                    <div style={{ margin: "0 70px" }}>
+                    <div style={{ margin: margin }}>
                         <h1
                             style={{
-                                fontSize: "40px",
+                                fontSize: titleFontSize,
                                 marginTop: "10px",
                                 paddingBottom: "30px",
                                 textAlign: "center",
@@ -31,9 +41,9 @@ const SectionPicker = () => {
                         <div
                             style={{
                                 display: "grid",
-                                gridTemplateColumns: "repeat(2, 1fr)",
-                                gap: "20px",
-                                rowGap: "30px",
+                                gridTemplateColumns: gridColumns,
+                                gap: gap,
+                                rowGap: rowGap,
                                 justifyContent: "center",
                             }}
                         >
@@ -51,7 +61,7 @@ const SectionPicker = () => {
                             />
                             <div
                                 style={{
-                                    gridColumn: "1 / -1",
+                                    gridColumn: isMobile ? "1" : "1 / -1",
                                     display: "flex",
                                     justifyContent: "center",
                                     width: "100%",

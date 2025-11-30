@@ -1,16 +1,26 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import useResponsive from "../hooks/useResponsive";
 
 const SectionPickerCard = ({ title, description, image, destination }) => {
   const navigate = useNavigate();
+  const { isMobile } = useResponsive();
+
+  const flexDirection = isMobile ? "column" : "row";
+  const imageHeight = isMobile ? "150px" : "100px";
+  const imageWidth = isMobile ? "100%" : "auto";
+  const titleFontSize = isMobile ? "20px" : "25px";
+  const descriptionFontSize = isMobile ? "15px" : "16.5px";
+  const padding = isMobile ? "15px" : "20px";
+
   return (
     <div
       style={{
         border: "2px solid #dcdcdcff",
         borderRadius: "10px",
-        padding: "20px",
+        padding: padding,
         display: "flex",
-        flexDirection: "row",
+        flexDirection: flexDirection,
         justifyContent: "space-between",
         gap: "20px",
         backgroundColor: "rgba(36, 36, 36, 0.6)",
@@ -25,9 +35,9 @@ const SectionPickerCard = ({ title, description, image, destination }) => {
         e.currentTarget.style.borderColor = "#dcdcdcff";
       }}
     >
-      <div>
-        <h3 style={{ margin: "0px", fontSize: "25px" }}>{title}</h3>
-        <p style={{ fontSize: "16.5px" }}>{description}</p>
+      <div style={{ flex: 1 }}>
+        <h3 style={{ margin: "0px", fontSize: titleFontSize }}>{title}</h3>
+        <p style={{ fontSize: descriptionFontSize }}>{description}</p>
         <button
           style={{
             background: "transparent",
@@ -56,7 +66,17 @@ const SectionPickerCard = ({ title, description, image, destination }) => {
           Learn More →
         </button>
       </div>
-      <img src={image} style={{ height: "100px", borderRadius: "10px" }} />
+      <img
+        src={image}
+        style={{
+          height: imageHeight,
+          width: imageWidth,
+          maxWidth: "100%",
+          objectFit: "cover",
+          borderRadius: "10px",
+          flexShrink: 0,
+        }}
+      />
     </div>
   );
 };

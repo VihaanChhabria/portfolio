@@ -1,19 +1,30 @@
 import React from "react";
 import AboutMePicture from "../assets/AboutMePicture.jpg";
+import useResponsive from "../hooks/useResponsive";
 
 const AboutMe = () => {
+  const { isMobile, isTablet } = useResponsive();
+
+  const padding = isMobile ? "20px" : isTablet ? "20px 40px" : "20px 100px";
+  const flexDirection = isMobile ? "column" : "row";
+  const imageHeight = isMobile ? "200px" : isTablet ? "250px" : "300px";
+  const imageWidth = isMobile ? "100%" : "auto";
+  const fontSize = isMobile ? "16px" : isTablet ? "17px" : "18px";
+  const titleFontSize = isMobile ? "28px" : isTablet ? "34px" : "40px";
+  const gap = isMobile ? "20px" : "45px";
+
   return (
     <div
       style={{
         borderBottom: "4px solid #e5e7eb",
-        padding: "20px 100px",
+        padding: padding,
         zIndex: "999",
         position: "relative",
         backgroundColor: "#242424",
       }}
     >
       <h1
-        style={{ fontSize: "40px", marginTop: "10px" }}
+        style={{ fontSize: titleFontSize, marginTop: "10px" }}
         className="gradient-text"
       >
         About Me
@@ -21,18 +32,25 @@ const AboutMe = () => {
       <div
         style={{
           display: "flex",
-          flexDirection: "row",
+          flexDirection: flexDirection,
           justifyContent: "space-between",
           width: "100%",
-          gap: "45px",
+          gap: gap,
           marginBottom: "20px",
         }}
       >
         <img
           src={AboutMePicture}
-          style={{ height: "300px", borderRadius: "15px" }}
+          style={{
+            height: imageHeight,
+            width: imageWidth,
+            maxWidth: "100%",
+            objectFit: "cover",
+            borderRadius: "15px",
+            flexShrink: 0,
+          }}
         />
-        <p style={{ fontSize: "18px", lineHeight: "1.6", marginTop: "0px" }}>
+        <p style={{ fontSize: fontSize, lineHeight: "1.6", marginTop: "0px" }}>
           Hello! I'm Vihaan Chhabria, a passionate high school student in Grade
           10 with a deep interest in the sciences and a strong desire to pursue
           a career in medicine. I am fascinated by the intricacies of human

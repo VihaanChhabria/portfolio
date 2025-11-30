@@ -4,8 +4,21 @@ import { FileUser, Mail } from "lucide-react";
 import linkedin from "../assets/linkedin.svg";
 import youtube from "../assets/youtube.svg";
 import github from "../assets/github.svg";
+import useResponsive from "../hooks/useResponsive";
 
 const MainSection = () => {
+  const { isMobile, isTablet } = useResponsive();
+
+  const containerMargin = isMobile ? "0 20px" : isTablet ? "0 40px" : "0 100px";
+  const flexDirection = isMobile ? "column" : "row";
+  const titleFontSize = isMobile ? "32px" : isTablet ? "42px" : "60px";
+  const subtitleFontSize = isMobile ? "18px" : isTablet ? "20px" : "25px";
+  const introFontSize = isMobile ? "16px" : isTablet ? "18px" : "20px";
+  const socialWidth = isMobile ? "100%" : "275px";
+  const socialGap = isMobile ? "15px" : "20px";
+  const sectionMarginTop = isMobile ? "30px" : "70px";
+  const sectionPaddingBottom = isMobile ? "40px" : "75px";
+
   return (
     <div
       style={{
@@ -16,41 +29,71 @@ const MainSection = () => {
       <div
         className="grid-pattern"
         style={{
-          paddingBottom: "75px",
+          paddingBottom: sectionPaddingBottom,
           borderBottom: "4px solid #e5e7eb",
         }}
       >
-        <div style={{ margin: "0 100px" }}>
-          <h2 style={{ paddingTop: "20px", marginTop: "0px" }}>
+        <div style={{ margin: containerMargin }}>
+          <h2
+            style={{
+              paddingTop: "20px",
+              marginTop: "0px",
+              fontSize: isMobile ? "24px" : "inherit",
+            }}
+          >
             Vihaan Chhabria
           </h2>
           <div
             style={{
-              height: "480px",
-              marginTop: "70px",
+              marginTop: sectionMarginTop,
               display: "flex",
-              alignItems: "center",
-              flexDirection: "row",
+              alignItems: isMobile ? "flex-start" : "center",
+              flexDirection: flexDirection,
             }}
           >
             <img
               src={profilePicture}
               style={{
-                height: "100%",
+                height: "480px",
+                width: isMobile ? "100%" : "auto",
+                maxWidth: "100%",
+                objectFit: "cover",
                 borderRadius: "15px",
                 zIndex: "999",
                 position: "relative",
               }}
             />
-            <div style={{ marginLeft: "30px", height: "100%" }}>
-              <h2 style={{ fontSize: "20px" }}>
+            <div
+              style={{
+                marginLeft: isMobile ? "0" : "30px",
+                height: isMobile ? "auto" : "100%",
+                width: isMobile ? "100%" : "auto",
+              }}
+            >
+              <h2
+                style={{
+                  fontSize: introFontSize,
+                  marginTop: isMobile ? "20px" : "0",
+                }}
+              >
                 Hi, I'm Vihaan Chhabria, and I love
               </h2>
-              <h1 style={{ display: "inline", fontSize: "60px" }}>
+              <h1
+                style={{
+                  display: "inline",
+                  fontSize: titleFontSize,
+                  lineHeight: "1.2",
+                }}
+              >
                 Exploring The <span className="gradient-text">Science</span>{" "}
                 That Keeps Us Alive 🔬
               </h1>
-              <h2 style={{ fontSize: "25px", marginTop: "45px" }}>
+              <h2
+                style={{
+                  fontSize: subtitleFontSize,
+                  marginTop: isMobile ? "25px" : "45px",
+                }}
+              >
                 High School Student (Grade 10) |{" "}
                 <span style={{ color: "#a78bfa" }}>Aspiring Physician</span>
               </h2>
@@ -60,17 +103,18 @@ const MainSection = () => {
                   display: "flex",
                   flexDirection: "row",
                   alignItems: "center",
-                  justifyContent: "space-between",
-                  width: "275px",
-                  gap: "20px",
-                  marginTop: "45px",
+                  justifyContent: isMobile ? "flex-start" : "space-between",
+                  width: socialWidth,
+                  gap: socialGap,
+                  marginTop: isMobile ? "30px" : "45px",
                   zIndex: "999",
                   position: "relative",
+                  flexWrap: "wrap",
                 }}
               >
                 <img
                   src={linkedin}
-                  height={"35px"}
+                  height={isMobile ? "30px" : "35px"}
                   onClick={() =>
                     window.open("https://www.linkedin.com/", "_blank")
                   }
@@ -78,7 +122,7 @@ const MainSection = () => {
                 />
                 <img
                   src={github}
-                  height={"35px"}
+                  height={isMobile ? "30px" : "35px"}
                   onClick={() =>
                     window.open("https://github.com/VihaanChhabria/", "_blank")
                   }
@@ -86,7 +130,7 @@ const MainSection = () => {
                 />
                 <img
                   src={youtube}
-                  height={"35px"}
+                  height={isMobile ? "30px" : "35px"}
                   onClick={() =>
                     window.open(
                       "https://www.youtube.com/@vihaanthebot/",
@@ -96,14 +140,14 @@ const MainSection = () => {
                   style={{ cursor: "pointer" }}
                 />
                 <Mail
-                  size={35}
+                  size={isMobile ? 30 : 35}
                   onClick={() =>
                     window.open("mailto:chhabria.vihaan2@gmail.com", "_blank")
                   }
                   style={{ cursor: "pointer" }}
                 />
                 <FileUser
-                  size={35}
+                  size={isMobile ? 30 : 35}
                   onClick={() =>
                     window.open(
                       `${window.location.origin}/VihaanChhabriaResume.pdf`,

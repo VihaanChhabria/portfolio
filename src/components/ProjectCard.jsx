@@ -15,27 +15,6 @@ const ProjectCard = ({ project }) => {
       <div>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <h3 style={{ margin: 0, fontSize: "25px" }}>{project.title}</h3>
-          <div
-            style={{
-              backgroundColor: "#a78bfa22",
-              width: "fit-content",
-              padding: "5px 10px",
-              borderRadius: "20px",
-              marginTop: "10px",
-              fontSize: "16px",
-            }}
-          >
-            <p
-              style={{
-                margin: 0,
-                padding: 0,
-                fontWeight: "bold",
-                fontSize: "14px",
-              }}
-            >
-              {project.time}
-            </p>
-          </div>
         </div>
         <h3 style={{ margin: "5px 0", fontSize: "18px", color: "#a78bfa" }}>
           {project.subtitle}

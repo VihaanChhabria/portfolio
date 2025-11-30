@@ -173,7 +173,8 @@ const projects = [
     skills: ["Python", "Vision Systems", "Calibration", "Collaboration", "Problem-Solving"],
     learnMoreLink: "https://github.com/VihaanChhabria/",
     images: [
-      FRCLimelightOffsetCalibration1
+      FRCLimelightOffsetCalibration1,
+      FRCLimelightOffsetCalibration2
     ],
   },
   {
@@ -188,7 +189,8 @@ const projects = [
     skills: ["Python", "App Development", "CNC Control", "User Interface Design", "Problem-Solving"],
     learnMoreLink: "https://github.com/VihaanChhabria/",
     images: [
-      ArrowSwap1
+      ArrowSwap1,
+      ArrowSwap2
     ],
   },
 ];
@@ -198,6 +200,8 @@ const ProjectsPage = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const sectionsRef = useRef([]);
+
+  const activeProject = projects[activeProjectIndex];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -228,30 +232,35 @@ const ProjectsPage = () => {
   }, []);
 
   useEffect(() => {
-    console.log("setting up interval");
-    const interval = setInterval(() => {
-      console.log("changing image");
-      setCurrentImageIndex(
-        (prevIndex) => (prevIndex + 1) % projects[activeProjectIndex].images.length
-      );
-    }, 6500);
+    if (activeProject.images.length <= 1) return; // No need to rotate
 
-    return () => clearInterval(interval);
-  }, []);
+    const rotate = () => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % activeProject.images.length);
+    };
+
+    const timeout = setTimeout(rotate, 6500);
+
+    return () => clearTimeout(timeout);
+  }, [currentImageIndex, activeProjectIndex, activeProject.images.length]);
+
+  useEffect(() => {
+    setCurrentImageIndex(0);
+  }, [activeProjectIndex]);
+
 
   const handlePrev = () => {
+    if (activeProject.images.length <= 1) return;
     setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? activeProject.images.length - 1 : prevIndex - 1
     );
   };
 
   const handleNext = () => {
+    if (activeProject.images.length <= 1) return;
     setCurrentImageIndex((prevIndex) =>
       (prevIndex + 1) % activeProject.images.length
     );
   };
-
-  const activeProject = projects[activeProjectIndex];
 
   return (
     <div
@@ -306,8 +315,7 @@ const ProjectsPage = () => {
             width: "42.5%",
             height: "500px",
             position: "sticky",
-            top: "50vh",
-            transform: "translateY(-50%)",
+            top: "20px",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -315,22 +323,23 @@ const ProjectsPage = () => {
             marginLeft: "50px",
           }}
         >
-          <button
-            onClick={handlePrev}
-            style={{
-              position: "absolute",
-              left: "10px",
-              background: "rgba(75, 75, 75, 0.7)",
-              border: "none",
-              borderRadius: "50%",
-              padding: "10px",
-              cursor: "pointer",
-              zIndex: 10,
-            }}
-          >
-            <ChevronLeft size={24} />
-          </button>
-
+          {activeProject.images.length > 1 && (
+            <button
+              onClick={handlePrev}
+              style={{
+                position: "absolute",
+                left: "10px",
+                background: "rgba(75, 75, 75, 0.7)",
+                border: "none",
+                borderRadius: "50%",
+                padding: "10px",
+                cursor: "pointer",
+                zIndex: 10,
+              }}
+            >
+              <ChevronLeft size={24} />
+            </button>
+          )}
           <div
             style={{
               display: "flex",
@@ -352,22 +361,50 @@ const ProjectsPage = () => {
               />
             ))}
           </div>
+          {activeProject.images.length > 1 && (
+            <div
+              style={{
+                position: "absolute",
+                bottom: "50px",
+                display: "flex",
+                justifyContent: "center",
+                width: "100%",
+                gap: "6px",
+                zIndex: 10,
+              }}
+            >
+              {activeProject.images.map((_, i) => (
+                <span
+                  key={i}
+                  style={{
+                    width: "10px",
+                    height: "10px",
+                    borderRadius: "50%",
+                    background: i === currentImageIndex ? "#fff" : "rgba(255,255,255,0.5)",
+                    transition: "background 0.3s",
+                  }}
+                />
+              ))}
+            </div>
+          )}
 
-          <button
-            onClick={handleNext}
-            style={{
-              position: "absolute",
-              right: "10px",
-              background: "rgba(75, 75, 75, 0.7)",
-              border: "none",
-              borderRadius: "50%",
-              padding: "10px",
-              cursor: "pointer",
-              zIndex: 10,
-            }}
-          >
-            <ChevronRight size={24} />
-          </button>
+          {activeProject.images.length > 1 && (
+            <button
+              onClick={handleNext}
+              style={{
+                position: "absolute",
+                right: "10px",
+                background: "rgba(75, 75, 75, 0.7)",
+                border: "none",
+                borderRadius: "50%",
+                padding: "10px",
+                cursor: "pointer",
+                zIndex: 10,
+              }}
+            >
+              <ChevronRight size={24} />
+            </button>
+          )}
         </div>
       </div>
     </div>

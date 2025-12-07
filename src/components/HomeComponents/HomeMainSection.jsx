@@ -94,8 +94,9 @@ const HomeMainSection = () => {
                   marginTop: isMobile ? "25px" : "45px",
                 }}
               >
-                High School Student (Grade 10) |{" "}
-                <span style={{ color: "#a78bfa" }}>Aspiring Physician</span>
+                High School Student (Grade 10)
+                 {/* |{" "} */}
+                {/* <span style={{ color: "#a78bfa" }}>Aspiring Physician</span> */}
               </h2>
 
               <div
@@ -112,14 +113,14 @@ const HomeMainSection = () => {
                   flexWrap: "wrap",
                 }}
               >
-                <img
+                {/*<img
                   src={linkedin}
                   height={isMobile ? "30px" : "35px"}
                   onClick={() =>
                     window.open("https://www.linkedin.com/", "_blank")
                   }
                   style={{ cursor: "pointer" }}
-                />
+                />*/}
                 <img
                   src={github}
                   height={isMobile ? "30px" : "35px"}

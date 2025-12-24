@@ -1,6 +1,7 @@
 import React from "react";
-import AboutMePicture from "../../assets/AboutMePicture.jpg";
 import useResponsive from "../../hooks/useResponsive";
+
+import AboutMePhoto from "../../assets/HomePageImages/AboutMePhoto.jpg";
 
 const HomeAboutMe = () => {
   const { isMobile, isTablet } = useResponsive();
@@ -40,12 +41,12 @@ const HomeAboutMe = () => {
         }}
       >
         <img
-          src={AboutMePicture}
+          src={AboutMePhoto}
           style={{
             height: imageHeight,
             width: imageWidth,
             maxWidth: "100%",
-            objectFit: "cover",
+            objectFit: "contain",
             borderRadius: "15px",
             flexShrink: 0,
           }}

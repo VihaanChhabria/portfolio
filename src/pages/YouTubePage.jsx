@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import AboutMePicture from "../assets/AboutMePicture.jpg"; // fallback thumbnail
 
 const YouTubePage = ({ }) => {
 

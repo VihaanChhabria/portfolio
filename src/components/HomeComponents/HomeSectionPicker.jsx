@@ -1,7 +1,11 @@
 import React from "react";
 import HomeSectionPickerCard from "./HomeSectionPickerCard";
-import AboutMePicture from "../../assets/AboutMePicture.jpg";
 import useResponsive from "../../hooks/useResponsive";
+
+import ProjectsPhoto from "../../assets/HomePageImages/ProjectsPhoto.jpg";
+import ExperiencesPhoto from "../../assets/HomePageImages/ExperiencesPhoto.jpg";
+import YouTubePicture from "../../assets/HomePageImages/YouTubePhoto.jpg";
+
 
 const HomeSectionPicker = () => {
   const { isMobile, isTablet } = useResponsive();
@@ -55,7 +59,7 @@ const HomeSectionPicker = () => {
                 description={
                   "Real-world experiences that helped me grow: problem-solving, teamwork, engineering, research, and community impact."
                 }
-                image={AboutMePicture}
+                image={ExperiencesPhoto}
                 destination={"experiences"}
               />
               <HomeSectionPickerCard
@@ -63,7 +67,7 @@ const HomeSectionPicker = () => {
                 description={
                   "Projects where I apply coding, design, analytics, and engineering to solve real problems and build tools for teams and users."
                 }
-                image={AboutMePicture}
+                image={ProjectsPhoto}
                 destination={"projects"}
               />
               <div
@@ -79,7 +83,7 @@ const HomeSectionPicker = () => {
                   description={
                     "My space for creating, explaining, and documenting cool projects, tech experiments, and everything I'm learning."
                   }
-                  image={AboutMePicture}
+                  image={YouTubePicture}
                   destination={"youtube"}
                 />
               </div>

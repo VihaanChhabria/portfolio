@@ -72,7 +72,7 @@ const HomeSectionPickerCard = ({ title, description, image, destination }) => {
           height: imageHeight,
           width: imageWidth,
           maxWidth: "100%",
-          objectFit: "cover",
+          objectFit: "contain",
           borderRadius: "10px",
           flexShrink: 0,
         }}

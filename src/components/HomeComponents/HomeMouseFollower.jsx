@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import modeChange from "../config/modeChange";
 
 const HomeMouseFollower = () => {
   useEffect(() => {
@@ -47,8 +48,12 @@ const HomeMouseFollower = () => {
       }}
       className="mouse-follower"
     >
-      <h1 style={{ fontSize: "60px", lineHeight: 1, padding: 0, margin: 0 }}>
-        🧬
+      <h1 style={{ fontSize: "60px", lineHeight: 1, padding: 0, margin: 0, userSelect: "none" }}>
+        {modeChange(
+          "🧬",
+          "🛠️",
+          "🔎"
+        )}
       </h1>
     </div>
   );

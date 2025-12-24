@@ -2,6 +2,7 @@ import React from "react";
 import useResponsive from "../../hooks/useResponsive";
 
 import AboutMePhoto from "../../assets/HomePageImages/AboutMePhoto.jpg";
+import modeChange from "../config/modeChange";
 
 const HomeAboutMe = () => {
   const { isMobile, isTablet } = useResponsive();
@@ -52,14 +53,39 @@ const HomeAboutMe = () => {
           }}
         />
         <p style={{ fontSize: fontSize, lineHeight: "1.6", marginTop: "0px" }}>
-          Hello! I'm Vihaan Chhabria, a passionate high school student in Grade
-          10 with a deep interest in the sciences and a strong desire to pursue
-          a career in medicine. I am fascinated by the intricacies of human
-          biology and the advancements in medical science that improve lives
-          every day. Beyond academics, I am actively involved in my school's
-          student government as the Class President, where I strive to make a
-          positive impact on my school community. I also enjoy playing soccer,
-          which has taught me valuable lessons in teamwork and perseverance.
+          {modeChange(
+            // 1. Medicine
+            `Hello! I'm Vihaan Chhabria, a passionate high school student in Grade
+            10 with a deep interest in the sciences and a strong desire to pursue
+            a career in medicine. I am fascinated by the intricacies of human
+            biology and the advancements in medical science that improve lives
+            every day. Beyond academics, I am actively involved in my school's
+            student government as the Class President, where I strive to make a
+            positive impact on my school community. I also enjoy playing soccer,
+            which has taught me valuable lessons in teamwork and perseverance.`,
+
+            // 2. Engineering
+            `Hello! I'm Vihaan Chhabria, a passionate high school student in Grade
+            10 with a strong interest in engineering, technology, and problem-solving.
+            I enjoy designing, building, and analyzing systems that turn ideas into
+            real-world solutions. I am especially interested in how engineering and
+            computer science can be used to create innovative, efficient, and impactful
+            technologies. Beyond academics, I serve as my school's Class President,
+            where I focus on leadership, collaboration, and improving my school
+            community. I also play soccer, which has strengthened my teamwork,
+            discipline, and perseverance.`,
+
+            // 3. General
+            `Hello! I'm Vihaan Chhabria, a motivated high school student in Grade
+            10 with a broad interest in science, technology, and leadership. I enjoy
+            learning how ideas, from biology to engineering, can be applied to solve
+            real-world problems and improve everyday life. Outside the classroom,
+            I am actively involved in student government as the Class President,
+            working to make a positive impact on my school community. I also enjoy
+            playing soccer, which has helped me develop teamwork, resilience, and
+            a strong work ethic.`
+          )}
+
         </p>
       </div>
     </div>

@@ -4,7 +4,9 @@ import { FileUser, Mail } from "lucide-react";
 import linkedin from "../../assets/linkedin.svg";
 import youtube from "../../assets/youtube.svg";
 import github from "../../assets/github.svg";
+
 import useResponsive from "../../hooks/useResponsive";
+import modeChange from "../config/modeChange";
 
 const HomeMainSection = () => {
   const { isMobile, isTablet } = useResponsive();
@@ -85,8 +87,26 @@ const HomeMainSection = () => {
                   lineHeight: "1.2",
                 }}
               >
-                Exploring The <span className="gradient-text">Science</span>{" "}
-                That Keeps Us Alive 🔬
+                {modeChange(
+                  // 1. Medicine (unchanged)
+                  <>
+                    Exploring The <span className="gradient-text">Science</span>{" "}
+                    That Keeps Us Alive 🔬
+                  </>,
+
+                  // 2. Engineering
+                  <>
+                    Exploring The <span className="gradient-text">Engineering</span>{" "}
+                    That Builds Our Future ⚙️
+                  </>,
+
+                  // 3. General
+                  <>
+                    Exploring The <span className="gradient-text">Ideas</span>{" "}
+                    That Shape Our World 🌍
+                  </>
+                )}
+
               </h1>
               <h2
                 style={{
@@ -95,8 +115,12 @@ const HomeMainSection = () => {
                 }}
               >
                 High School Student (Grade 10)
-                 {/* |{" "} */}
-                {/* <span style={{ color: "#a78bfa" }}>Aspiring Physician</span> */}
+                {modeChange(
+                  <>{" "}|{" "}<span style={{ color: "#a78bfa" }}>Aspiring Physician</span></>,
+                  <>{" "}|{" "}<span style={{ color: "#a78bfa" }}>Future Engineer</span></>,
+                  <></>
+                )}
+
               </h2>
 
               <div

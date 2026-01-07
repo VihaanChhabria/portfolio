@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import useResponsive from "../../hooks/useResponsive";
 
-const HomeSectionPickerCard = ({ title, description, image, destination }) => {
+const HomeSectionPickerCard = ({ title, description, image, destination, customOnClick=null}) => {
   const navigate = useNavigate();
   const { isMobile } = useResponsive();
 
@@ -53,10 +53,12 @@ const HomeSectionPickerCard = ({ title, description, image, destination }) => {
             transition:
               "background-color 150ms, border-color 150ms, color 150ms, box-shadow 150ms",
           }}
-          onClick={() => navigate(destination)}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.04)";
-            e.currentTarget.style.borderColor = "#a78bfa";
+          onClick={() => {
+            if (customOnClick) {
+              customOnClick();
+            } else {
+              navigate(destination);
+            }
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.backgroundColor = "transparent";

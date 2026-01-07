@@ -84,7 +84,10 @@ const HomeSectionPicker = () => {
                     "My space for creating, explaining, and documenting cool projects, tech experiments, and everything I'm learning."
                   }
                   image={YouTubePicture}
-                  destination={"youtube"}
+                  destination={""}
+                  customOnClick={() => {
+                    window.open("https://www.youtube.com/@VihaanTheBot", "_blank");
+                  }}
                 />
               </div>
             </div>
